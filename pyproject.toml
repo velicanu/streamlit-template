@@ -1,0 +1,22 @@
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = "src"
+
+[tool.ruff]
+src = ["src"]
+select = [
+    "E",  # pycodestyle errors
+    "W",  # pycodestyle warnings
+    "F",  # pyflakes
+    "I",  # isort
+    "C",  # flake8-comprehensions
+    "B",  # flake8-bugbear
+]
+ignore = [
+    "E501",  # line too long, handled by black
+    "C901",  # too complex
+]
+unfixable = ["F841"]
+
+[tool.ruff.per-file-ignores]
+"__init__.py" = ["F401"]
