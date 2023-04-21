@@ -30,6 +30,7 @@ jobs:
           pip install -r requirements.txt
       - name: ci.sh
         run: |
+          source venv/bin/activate
           echo Running black...
           black --check .
           echo Running ruff...
