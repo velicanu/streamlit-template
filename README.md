@@ -4,16 +4,20 @@ go. Click the `Use this template` button to get started.
 
 ## Setup
 
-In a virtual env, Install requirements via:
-```
+In a virtual env, install requirements either the fast way via uv:
+```bash
 pip install uv
 uv pip install -r requirements.txt
+```
+or just with pip:
+```bash
+pip install -r requirements.txt
 ```
 
 ## Usage
 
 The streamlit app can be started via:
-```
+```bash
 streamlit run src/app.py
 ```
 
@@ -21,7 +25,7 @@ streamlit run src/app.py
 
 Tests are run via pytest:
 
-```
+```bash
 pytest
 ```
 
