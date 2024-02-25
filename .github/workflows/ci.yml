@@ -20,18 +20,11 @@ jobs:
         id: py
         with:
           python-version: "3.11"
-      - uses: actions/cache@v3
-        id: cache
-        with:
-          path: venv
-          key: ${{ runner.os }}-${{ steps.py.outputs.python-version }}-${{ hashFiles('requirements.txt') }}
       - name: Install dependencies
-        if: |
-          steps.cache.outputs.cache-hit != 'true'
         run: |
           python -m venv venv && source venv/bin/activate
-          pip install --upgrade pip
-          pip install -r requirements.txt
+          pip install uv
+          uv pip install -r requirements.txt
       - name: ci.sh
         run: |
           source venv/bin/activate
