@@ -41,7 +41,7 @@ uv to `pip compile` a new requirements file.
 pip install uv
 
 # edit the requirements.in file
-uv pip compile requirements.in -o requirements.txt
+uv pip compile requirements.in > requirements.txt
 
 # a new requirements.txt file is generated, install the usual way
 pip install -r requirements.txt
